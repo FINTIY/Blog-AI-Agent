@@ -4,7 +4,7 @@ from google.adk.runners import InMemoryRunner
 from google.adk.tools import AgentTool, FunctionTool, google_search
 from google.genai import types
 
-retry_config = types.HttpRetryoptions(
+retry_config = types.HttpRetryOptions(
     attempts = 5,
     exp_base = 7,
     initial_delay = 1,
@@ -41,4 +41,5 @@ final_agent = Agent(
 root_agent = Agent(
     name="RootAgent",
     sub_agents = [outline_agent, draft_agent, final_agent],
+
 )
